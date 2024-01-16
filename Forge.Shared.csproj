@@ -18,11 +18,15 @@
 		<PackageId>Forge.Shared</PackageId>
 		<Authors>Zoltan Juhasz</Authors>
 		<Title>Forge Shared</Title>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\.Documents\Forge.pfx</AssemblyOriginatorKeyFile>
 		<ProjectGuid>{2AE42849-9995-4FB5-8FFE-59054CCE6AD0}</ProjectGuid>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\..\.Documents\Forge.pfx</AssemblyOriginatorKeyFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+	
 	<PropertyGroup>
 		<DocumentationFile>Forge.Shared.xml</DocumentationFile>
 		<RepositoryUrl>https://github.com/JZO001/Forge.Shared</RepositoryUrl>
@@ -63,8 +67,8 @@
 	  <ProjectReference Include="..\Forge.Logging.Abstraction\Forge.Logging.Abstraction.csproj" />
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Exec Command="echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).dll&quot;&#xD;&#xA;echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).pdb&quot;&#xD;&#xA;echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).xml&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).xml&quot;&#xD;&#xA;" />
-	</Target>
+	</Target>-->
 
 </Project>
