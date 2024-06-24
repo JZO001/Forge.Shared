@@ -57,7 +57,7 @@ namespace Forge.Shared
                 {
                     di.Create();
                 }
-                FileInfo testFile = new FileInfo(Path.Combine(path, "test.txt"));
+                FileInfo testFile = new FileInfo(Path.Combine(path, $"{Guid.NewGuid().ToString()}.txt"));
                 if (testFile.Exists)
                 {
                     testFile.Delete();
